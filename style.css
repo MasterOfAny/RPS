@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.header,
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #000;
+}
+.container {
+    padding: 5px 20px;
+}
+.header__title,
+.footer__title {
+    display: block;
+    color: #fff;
+}
+.main {
+    padding-top: 20px;
+}
+.text {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+}
+.play-area {
+    display: flex;
+    position: relative;
+    margin-top: 80px;
+    justify-content: center;
+    gap: 50px;
+    z-index: 4;
+}
+.play-area__player,
+.play-area__bot {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 12px 14px 8px 0px rgba(255, 255, 255, 0.371);
+}
+.player-info,
+.bot-info {
+    display: flex;
+    justify-content: space-between;
+}
+.name {
+    font-size: 34px;
+}
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    border: 2px solid #000;
+}
+.score-points {
+    font-size: 50px;
+}
+.vs {
+    display: flex;
+    align-items: center;
+}
+.vs-icon {
+    width: 100px;
+    height: 100px;
+}
+.avatar-player,
+.avatar-bot {
+    display: block;
+    padding: 5px;
+    width: 148px;
+    height: 148px;
+    border: 1px solid #000;
+}
+.avatar-player {
+    transform: scale(-1, 1);
+}
+.weapons {
+    display: flex;
+    margin-top: 15px;
+    gap: 10px;
+}
+.item-card {
+    padding: 5px;
+    border: 4px solid #000;
+    box-shadow: 2px 2px 4px 0px rgba(97, 97, 97, 0.55);
+}
+.item-card__img {
+    width: 130px;
+    height: 130px;
+    cursor: pointer;
+    transition: 0.3s all linear;
+}
+.item-card:hover,
+.item-card:active {
+    background-color: #000;
+}
+.item-card:hover .item-card__img,
+.item-card:active .item-card__img {
+    filter: invert(1);
+}
+.sea {
+    margin-top: -80px;
+    width: 100%;
+    height: 320px;
+    background-image: url(./img/waves-bottom.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.footer {
+    margin-top: auto;
+    padding-bottom: 10px;
+}
+
+@media (min-width: 600px) {
+    .text,
+    .header__title {
+        font-size: 28px;
+    }
+    .play-area {
+        margin: 0 auto;
+        margin-top: 25%;
+        /* min-width: 100px;
+        max-width: 480px; */
+        flex-direction: row;
+        gap: 10px;
+    }
+    .vs {
+        display: none;
+    }
+    .player-info,
+    .bot-info {
+        justify-content: space-between;
+        box-shadow: none;
+    }
+    .play-area__player,
+    .play-area__bot {
+        flex: 1;
+    }
+    .weapons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .avatar-player,
+    .avatar-bot {
+        display: block;
+        width: 100px;
+        height: 100px;
+    }
+    .item-card {
+        display: flex;
+        justify-content: center;
+        width: min-content;
+        box-shadow: none;
+        border: 3px solid #000;
+    }
+    .item-card__img {
+        width: 80px;
+        height: 80px;
+    }
+    .mobile {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .name {
+        font-size: 30px;
+    }
+    .score {
+        margin-left: 10px;
+        width: 50px;
+        height: 50px;
+        border: 2px solid #000;
+    }
+    .score-points {
+        font-size: 28px;
+    }
+    .sea {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .text,
+    .header__title {
+        font-size: 20px;
+    }
+    .play-area {
+        margin: 0 auto;
+        margin-top: 25%;
+        min-width: 100px;
+        max-width: 480px;
+        flex-direction: row;
+        gap: 5px;
+    }
+    .vs {
+        display: none;
+    }
+    .player-info,
+    .bot-info {
+        flex-direction: column;
+        box-shadow: none;
+    }
+    .play-area__player,
+    .play-area__bot {
+        flex: 1;
+    }
+    .weapons {
+        flex-direction: column;
+    }
+    .avatar-player,
+    .avatar-bot {
+        display: block;
+        margin: 0 auto;
+        width: 75px;
+        height: 75px;
+    }
+    .item-card {
+        display: flex;
+        justify-content: center;
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    .item-card__img {
+        width: 50px;
+        height: 50px;
+    }
+    .mobile {
+        display: flex;
+        margin-top: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+    .name {
+        font-size: 20px;
+    }
+    .score {
+        margin-left: 10px;
+        width: 25px;
+        height: 25px;
+        border: 1px solid #000;
+    }
+    .score-points {
+        font-size: 18px;
+    }
+    .sea {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .play-area {
+        margin-top: 15%;
+    }
+    .weapons {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .sea {
+        display: block;
+    }
+}
+@media (min-width: 1200px) {
+    .main {
+        padding-top: 20px;
+    }
+    .text {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 700;
+    }
+    .play-area {
+        display: flex;
+        position: relative;
+        margin-top: 80px;
+        justify-content: center;
+        gap: 50px;
+        z-index: 4;
+    }
+    .play-area__player,
+    .play-area__bot {
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+        background-color: #fff;
+        border: 2px solid #000;
+        box-shadow: 12px 14px 8px 0px rgba(255, 255, 255, 0.371);
+    }
+    .player-info,
+    .bot-info {
+        display: flex;
+        justify-content: space-between;
+    }
+    .name {
+        font-size: 34px;
+    }
+    .score {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        padding: 5px;
+        border: 2px solid #000;
+    }
+    .score-points {
+        font-size: 50px;
+    }
+    .vs {
+        display: flex;
+        align-items: center;
+    }
+    .avatar-player,
+    .avatar-bot {
+        display: block;
+        padding: 5px;
+        width: 148px;
+        height: 148px;
+        border: 1px solid #000;
+    }
+    .weapons {
+        display: flex;
+        margin-top: 15px;
+        gap: 10px;
+    }
+    .item-card {
+        padding: 5px;
+        border: 4px solid #000;
+        box-shadow: 2px 2px 4px 0px rgba(97, 97, 97, 0.55);
+    }
+    .item-card__img {
+        width: 130px;
+        height: 130px;
+        cursor: pointer;
+        transition: 0.3s all linear;
+    }
+    .sea {
+        margin-top: -80px;
+        width: 100%;
+        height: 320px;
+        background-image: url(./img/waves-bottom.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
